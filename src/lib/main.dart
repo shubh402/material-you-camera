@@ -19,24 +19,16 @@ void main() async {
 
   // Select the first available camera.
   final camera = cameras.first;
-
-  runApp(MaterialApp(
-    title: 'Material You Camera',
-    theme: ThemeData(
-      primarySwatch: Colors.blue,
-      // Use the platform's brightness setting to determine the theme brightness.
-      brightness: Brightness.light,
-      // Use Material You colors for the app's primary color scheme.
-      colorScheme: const ColorScheme.fromSwatch(
-        primarySwatch: Colors.blueGrey,
-        brightness: Brightness.light,
-        // Use the Material You accent color for the app's secondary color scheme.
-        accentColor: Colors.deepPurple,
-      ),
-    ),
-    home: CameraApp(camera),
-  ));
-}
+  
+runApp(MaterialApp(
+  title: 'Material You Camera',
+  theme: ThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Colors.black,
+    accentColor: Colors.white,
+  ),
+  home: CameraApp(camera),
+));
 
 class CameraApp extends StatefulWidget {
   final CameraDescription camera;
