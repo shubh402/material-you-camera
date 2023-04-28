@@ -31,7 +31,7 @@ void main() async {
         primarySwatch: Colors.blueGrey,
         brightness: Brightness.light,
         // Use the Material You accent color for the app's secondary color scheme.
-        secondarySwatch: Colors.deepPurple,
+        accentColor: Colors.deepPurple,
       ),
     ),
     home: CameraApp(camera),
