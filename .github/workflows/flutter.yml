@@ -1,0 +1,38 @@
+name: Flutter CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: 'recursive'
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v1.5.1
+      with:
+        flutter-version: '2.8.1'
+
+    - name: Install dependencies
+      working-directory: ./src
+      run: flutter pub get
+
+    - name: Build APK
+      working-directory: ./src
+      run: flutter build apk
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: app-release.apk
+        path: ./src/build/app/outputs/flutter-apk/app-release.apk
