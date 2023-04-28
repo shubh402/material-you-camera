@@ -114,7 +114,7 @@ class _CameraAppState extends State<CameraApp> {
   void _stopVideoRecording() async {
     try {
       // Stop recording to a temporary file and retrieve the final path.
-      XFile videoFile = await _controller.stopVideoRecording();
+      XFile videoFile = await _controller.startVideoRecording(path);
       String savedPath = videoFile.path;
 
       // Construct the path where the video should be saved using the
