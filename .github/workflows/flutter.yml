@@ -19,7 +19,7 @@ jobs:
         submodules: 'recursive'
 
     - name: Set up Flutter
-      uses: subosito/flutter-action@v1.5.1
+      uses: subosito/flutter-action@v2.14.0
       with:
         flutter-version: '3.7.12'
 
